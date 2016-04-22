@@ -42,8 +42,16 @@ var marriageField = function (name) {
     birthplace: simpleField(name + '\'s ' + 'Birthplace'),
     baptiseplace: simpleField(name + '\'s ' + 'Baptiseplace'),
     address: simpleField(name + '\'s ' + 'address'),
-    father: nameField(name + '\'s ' + 'Father'),
-    mother: nameField(name + '\'s ' + 'Mother')
+    mother: {
+      firstName: simpleField(name + '\'s ' + 'Mother\'s  First Name'),
+      middleName: simpleField(name + '\'s ' + 'Mother\'s  Middle Name'),
+      lastName: simpleField(name + '\'s ' + 'Mother\'s  Last Name')
+    },
+    father: {
+      firstName: simpleField(name + '\'s ' + 'Father\'s  First Name'),
+      middleName: simpleField(name + '\'s ' + 'Father\'s  Middle Name'),
+      lastName: simpleField(name + '\'s ' + 'Father\'s  Last Name')
+    }
   };
 };
 
@@ -51,7 +59,7 @@ var marriageField = function (name) {
  * Marriage Schema
  */
 var MarriageSchema = new Schema({
-  marriage: {
+  parties: {
     bride: marriageField('Bride'),
     groom: marriageField('Groom')
   },
@@ -76,6 +84,5 @@ var MarriageSchema = new Schema({
   }
 });
 
-console.log(MarriageSchema);
 
 mongoose.model('Marriage', MarriageSchema);

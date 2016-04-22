@@ -17,13 +17,18 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
-
+    vm.age = age;
     // Remove existing Marriage
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
         vm.marriage.$remove($state.go('marriages.list'));
       }
     }
+
+    function age(bday){
+
+    }
+
     // Save Marriage
     function save(isValid) {
       // TODO: move create/update logic to service
@@ -42,6 +47,24 @@
       function errorCallback(res) {
         vm.error = res.data.message;
       }
+    }
+
+    function isLeapYear(year) {
+      var d = new Date(year, 1, 28);
+      d.setDate(d.getDate() + 1);
+      return d.getMonth() == 1;
+    }
+
+    function age(date) {
+      var d = new Date(date), now = new Date();
+      var years = now.getFullYear() - d.getFullYear();
+      d.setFullYear(d.getFullYear() + years);
+      if (d > now) {
+        years--;
+        d.setFullYear(d.getFullYear() - 1);
+      }
+      var days = (now.getTime() - d.getTime()) / (3600 * 24 * 1000);
+      return Math.floor(years + days / (isLeapYear(now.getFullYear()) ? 366 : 365));
     }
   }
 })();

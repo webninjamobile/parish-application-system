@@ -2,7 +2,7 @@
 
     <h1>Marriage Certificates <a data-ui-sref="marriages.create()" class="pull-right btn btn-info">Create</a></h1>
     <p class="input-group">
-        <input type="text" placeholder="Search By First Name or Last Name" class="form-control" ng-model="vm.key"/>
+        <input type="text" placeholder="Search By Groom First Name or Groom Last Name" class="form-control" ng-model="vm.key"/>
           <span class="input-group-btn">
                 <button ng-click="vm.search()" class="btn btn-default " type="button">Search</button>
           </span>
@@ -18,8 +18,8 @@
         <th>&nbsp;</th>
       </tr>
     <tr data-ng-repeat="marriage in vm.marriages">
-        <td><a data-ui-sref="marriages.view({ marriageId: marriage._id })">{{marriage.child.firstName}}</a></td>
-        <td><a data-ui-sref="marriages.view({ marriageId: marriage._id })">{{marriage.child.lastName}}</a></td>
+        <td><a data-ui-sref="marriages.view({ marriageId: marriage._id })">{{marriage.parties.groom.firstName}}</a></td>
+        <td><a data-ui-sref="marriages.view({ marriageId: marriage._id })">{{marriage.parties.groom.lastName}}</a></td>
         <td>{{marriage.birthday | date:'mediumDate'}}</td>
         <td>{{marriage.minister.firstName}} {{marriage.minister.lastName}}</td>
         <td>{{marriage.created | date:'mediumDate'}}</td>

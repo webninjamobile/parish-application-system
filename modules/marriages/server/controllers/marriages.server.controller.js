@@ -102,9 +102,9 @@ exports.search = function (req, res) {
 
   Marriage.find({
     $or: [
-      { 'child.firstName': regex },
-      { 'child.middleName': regex },
-      { 'child.lastName': regex }
+      { 'parties.groom.firstName': regex },
+      { 'parties.groom.middleName': regex },
+      { 'parties.groom.lastName': regex }
     ]
   }).sort('-created').populate('user', 'displayName').limit(50).exec(function (err, marriages) {
     if (err) {

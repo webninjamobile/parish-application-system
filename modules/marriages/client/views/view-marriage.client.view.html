@@ -11,15 +11,33 @@
 
 <div id="print-body">
     <h1 id="main-title">Certificate of Marriage</h1>
-    <h2>This is to acknowledge that</h2>
-    <h2 class="print-values">{{vm.marriage.child.firstName}} {{vm.marriage.child.lastName}} </h2>
-    <h2>Child of </h2>
-    <h2><span class="print-values">{{vm.marriage.parents.father.firstName}} {{vm.marriage.parents.father.lastName}}</span>
+    <h2>This is to acknowledge that
+    <span class="print-values">{{vm.marriage.parties.groom.firstName}} {{vm.marriage.parties.groom.lastName}}</span>,
+    {{vm.age(vm.marriage.parties.groom.birthday)}} yrs old.
+        </h2>
+    <h2>
+        a native of {{vm.marriage.parties.groom.birthplace}}
+        and a resident of {{vm.marriage.parties.groom.address}}
+    </h2>
+    <h2>Child of <span class="print-values">{{vm.marriage.parties.groom.father.firstName}} {{vm.marriage.parties.groom.father.lastName}}</span>
         and
-        <span class="print-values">{{vm.marriage.parents.mother.firstName}} {{vm.marriage.parents.mother.lastName}}</span> </h2>
+        <span class="print-values">{{vm.marriage.parties.groom.mother.firstName}} {{vm.marriage.parties.groom.mother.lastName}}</span> </h2>
     <h2>&nbsp;</h2>
-    <h1 id="sub-title">Was Solemnly Confirmed According <br>to the Rite of the Roman Catholic Church</h1>
+    <h1 id="sub-title">Has Contracted Marriage According <br>to the Rite of the Roman Catholic Church</h1>
     <h2>&nbsp;</h2>
+    <h2>With
+        <span class="print-values">{{vm.marriage.parties.bride.firstName}} {{vm.marriage.parties.bride.lastName}}</span>,
+        {{vm.age(vm.marriage.parties.bride.birthday)}} yrs old.
+    </h2>
+    <h2>
+        a native of {{vm.marriage.parties.bride.birthplace}}
+        and a resident of {{vm.marriage.parties.bride.address}}
+    </h2>
+    <h2>Child of <span class="print-values">{{vm.marriage.parties.bride.father.firstName}} {{vm.marriage.parties.bride.father.lastName}}</span>
+        and
+        <span class="print-values">{{vm.marriage.parties.bride.mother.firstName}} {{vm.marriage.parties.bride.mother.lastName}}</span> </h2>
+    <h2>&nbsp;</h2>
+
     <h2>On <span class="print-values">{{vm.marriage.marriageDate | date:('MMMM d, y')}}</span>
         by the Rev. Fr.
         <span class="print-values">{{vm.marriage.minister.firstName}} {{vm.marriage.minister.lastName}}</span>
@@ -31,10 +49,12 @@
         <span class="print-values">{{vm.marriage.sponsors.second.firstName}} {{vm.marriage.sponsors.second.lastName}}</span>
     </h2>
     <h2>&nbsp;</h2>
-    <h3>As appears from the Marriageal Register</h3>
+    <h3>As appears from the Marriage Register</h3>
     <h3>
         Book #<span class="print-values">{{vm.marriage.bookNumber}}</span>,
-        Page #<span class="print-values">{{vm.marriage.pageNumber}}</span>
+        Page #<span class="print-values">{{vm.marriage.pageNumber}}</span> & 
+        License #<span class="print-values">{{vm.marriage.licenseNumber}}</span>,
+        Registry #<span class="print-values">{{vm.marriage.registryNumber}}</span>
     </h3>
     <h3>&nbsp;</h3>
     <h3>
