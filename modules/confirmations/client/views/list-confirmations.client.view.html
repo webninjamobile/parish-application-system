@@ -1,0 +1,37 @@
+<section>
+
+    <h1>Confirmation Certificates <a data-ui-sref="confirmations.create()" class="pull-right btn btn-info">Create</a></h1>
+    <p class="input-group">
+        <input type="text" placeholder="Search By First Name or Last Name" class="form-control" ng-model="vm.key"/>
+          <span class="input-group-btn">
+                <button ng-click="vm.search()" class="btn btn-default " type="button">Search</button>
+          </span>
+    </p>
+  <table class="table table-striped">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Confirmation Date</th>
+        <th>Minister</th>
+        <th>Date Added</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    <tr data-ng-repeat="confirmation in vm.confirmations">
+        <td><a data-ui-sref="confirmations.view({ confirmationId: confirmation._id })">{{confirmation.child.firstName}}</a></td>
+        <td><a data-ui-sref="confirmations.view({ confirmationId: confirmation._id })">{{confirmation.child.lastName}}</a></td>
+        <td>{{confirmation.confirmationDate | date:'mediumDate'}}</td>
+        <td>{{confirmation.minister.firstName}} {{confirmation.minister.lastName}}</td>
+        <td>{{confirmation.created | date:'mediumDate'}}</td>
+        <td>
+            <a class="btn btn-info btn-sm" data-ui-sref="confirmations.edit({ confirmationId: confirmation._id })">Edit</a>
+            <a class="btn btn-primary btn-sm" href="/api/print/confirmation/{{confirmation._id}}">Print</a>
+        </td>
+        <td><a ng-click="vm.remove(confirmation)" class="btn btn-danger btn-sm">Delete</a></td>
+    </tr>
+  </table>
+
+  <div class="alert alert-warning text-center" data-ng-if="vm.confirmations.$resolved && !vm.confirmations.length">
+    No Confirmation Certicates
+  </div>
+</section>

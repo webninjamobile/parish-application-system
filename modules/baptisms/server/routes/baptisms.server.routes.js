@@ -8,6 +8,9 @@ var baptismsPolicy = require('../policies/baptisms.server.policy'),
 
 module.exports = function(app) {
   // Baptisms Routes
+  app.route('/api/baptisms/search').all()
+    .post(baptisms.search);
+
   app.route('/api/baptisms').all(baptismsPolicy.isAllowed)
     .get(baptisms.list)
     .post(baptisms.create);

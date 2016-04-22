@@ -12,13 +12,20 @@
 
     vm.baptisms = BaptismsService.query();
     vm.remove = remove;
+    vm.search = search;
 
     function remove(data) {
       if ($window.confirm('Are you sure you want to delete?')) {
-        BaptismsService.remove({baptismId: data._id}).$promise.then(function () {
+        BaptismsService.remove({ baptismId: data._id }).$promise.then(function () {
           $window.location.href = '/baptisms';
         });
       }
+    }
+
+    function search() {
+      BaptismsService.search({ key: vm.key }).$promise.then(function (result) {
+        vm.baptisms = result;
+      });
     }
   }
 })();

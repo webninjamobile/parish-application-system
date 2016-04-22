@@ -14,6 +14,11 @@
     }, {
       update: {
         method: 'PUT'
+      },
+      search: {
+        url: '/api/baptisms/search',
+        method: 'POST',
+        isArray: true
       }
     });
   }

@@ -1,0 +1,180 @@
+<h4 class="text-capitalize">{{name}}'s Data</h4>
+<hr/>
+<div class="row">
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s First Name</label>
+            <div class="col-md-8">
+                <input type="text" ng-model="model.firstName" class="form-control"
+                       placeholder="{{name}}'s First Name"/>
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Middle Name</label>
+
+            <div class="col-md-8">
+                <input type="text" ng-model="model.middleName" class="form-control"
+                       placeholder="{{name}}'s Middle Name"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Last Name</label>
+
+            <div class="col-md-8">
+                <input type="text" ng-model="model.lastName" class="form-control"
+                       placeholder="{{name}}'s Last Name"/>
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Legal Status</label>
+
+            <div class="col-md-8">
+                <select ng-model="model.legalStatus">
+                    <option value="Single">Single</option>
+                    <option value="Annulled">Annulled</option>
+                    <option value="Widowed">Widowed</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Birthday</label>
+
+            <div class="col-md-8">
+                <uib-datepicker ng-model="model.birthday" datepicker-options="dateOptions"></uib-datepicker>
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Baptised</label>
+
+            <div class="col-md-8">
+                <uib-datepicker ng-model="model.baptiseday" datepicker-options="dateOptions"></uib-datepicker>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Birth Place</label>
+
+            <div class="col-md-8">
+                <input type="text" class="form-control" ng-model="model.birthplace"/>
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Baptised Place</label>
+
+            <div class="col-md-8">
+                <input type="text" class="form-control" ng-model="model.baptiseplace"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-12">
+        <div class="row">
+            <label class="control-label col-md-2">{{name}}'s Address</label>
+
+            <div class="col-md-10">
+                <input type="text" ng-model="model.address" class="form-control"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="clearfix"/>
+<h4 class="text-capitalize">{{name}}'s Father Data</h4>
+<hr class="clearfix"/>
+
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Fathers First Name</label>
+            <div class="col-md-8">
+                <input type="text" ng-model="model.father.firstName" class="form-control"
+                       placeholder="{{name}}'s First Name"/>
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Fathers Middle Name</label>
+
+            <div class="col-md-8">
+                <input type="text" ng-model="model.father.middleName" class="form-control"
+                       placeholder="{{name}}'s Middle Name"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Fathers Last Name</label>
+
+            <div class="col-md-8">
+                <input type="text" ng-model="model.father.lastName" class="form-control"
+                       placeholder="{{name}}'s Last Name"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="clearfix"/>
+<h4 class="text-capitalize">{{name}}'s Mother Data</h4>
+<hr class="clearfix"/>
+<div class="row">
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Mother First Name</label>
+            <div class="col-md-8">
+                <input type="text" ng-model="model.mother.firstName" class="form-control"
+                       placeholder="{{name}}'s First Name"/>
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Mother Middle Name</label>
+
+            <div class="col-md-8">
+                <input type="text" ng-model="model.mother.middleName" class="form-control"
+                       placeholder="{{name}}'s Middle Name"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <div class="row">
+            <label class="control-label col-md-4">{{name}}'s Mother Last Name</label>
+
+            <div class="col-md-8">
+                <input type="text" ng-model="model.mother.lastName" class="form-control"
+                       placeholder="{{name}}'s Last Name"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="clearfix"/>

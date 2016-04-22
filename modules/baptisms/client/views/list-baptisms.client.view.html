@@ -2,9 +2,9 @@
 
     <h1>Baptismal Certificates <a data-ui-sref="baptisms.create()" class="pull-right btn btn-info">Create</a></h1>
     <p class="input-group">
-        <input type="text" placeholder="Search By First Name or Last Name" class="form-control" ng-model="search.date"/>
+        <input type="text" placeholder="Search By First Name or Last Name" class="form-control" ng-model="vm.key"/>
           <span class="input-group-btn">
-                <button ng-click="goSearch('delivery')" class="btn btn-default " type="button">Search</button>
+                <button ng-click="vm.search()" class="btn btn-default " type="button">Search</button>
           </span>
     </p>
   <table class="table table-striped">
@@ -32,6 +32,6 @@
   </table>
 
   <div class="alert alert-warning text-center" data-ng-if="vm.baptisms.$resolved && !vm.baptisms.length">
-    No Baptism Certicates yet, why don't you <a data-ui-sref="baptisms.create">create one</a>?
+    No Baptism Certicates
   </div>
 </section>

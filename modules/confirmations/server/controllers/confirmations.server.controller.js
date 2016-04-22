@@ -5,138 +5,138 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
-  Baptism = mongoose.model('Baptism'),
+  Confirmation = mongoose.model('Confirmation'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
 
 /**
- * Create a Baptism
+ * Create a Confirmation
  */
 exports.create = function (req, res) {
-  var baptism = new Baptism(req.body);
-  baptism.user = req.user;
+  var confirmation = new Confirmation(req.body);
+  confirmation.user = req.user;
 
-  baptism.save(function (err) {
+  confirmation.save(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(baptism);
+      res.jsonp(confirmation);
     }
   });
 };
 
 /**
- * Show the current Baptism
+ * Show the current Confirmation
  */
 exports.read = function (req, res) {
   // convert mongoose document to JSON
-  var baptism = req.baptism ? req.baptism.toJSON() : {};
+  var confirmation = req.confirmation ? req.confirmation.toJSON() : {};
 
   // Add a custom field to the Article, for determining if the current User is the "owner".
   // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
-  baptism.isCurrentUserOwner = req.user && baptism.user && baptism.user._id.toString() === req.user._id.toString();
+  confirmation.isCurrentUserOwner = req.user && confirmation.user && confirmation.user._id.toString() === req.user._id.toString();
 
-  res.jsonp(baptism);
+  res.jsonp(confirmation);
 };
 
 /**
- * Update a Baptism
+ * Update a Confirmation
  */
 exports.update = function (req, res) {
-  var baptism = req.baptism;
+  var confirmation = req.confirmation;
 
-  baptism = _.extend(baptism, req.body);
+  confirmation = _.extend(confirmation, req.body);
 
-  baptism.save(function (err) {
+  confirmation.save(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(baptism);
+      res.jsonp(confirmation);
     }
   });
 };
 
 /**
- * Delete an Baptism
+ * Delete an Confirmation
  */
 exports.delete = function (req, res) {
-  var baptism = req.baptism;
+  var confirmation = req.confirmation;
 
-  baptism.remove(function (err) {
+  confirmation.remove(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(baptism);
+      res.jsonp(confirmation);
     }
   });
 };
 
 /**
- * List of Baptisms
+ * List of Confirmations
  */
 exports.list = function (req, res) {
-  Baptism.find().sort('-created').populate('user', 'displayName').limit(50).exec(function (err, baptisms) {
+  Confirmation.find().sort('-created').populate('user', 'displayName').limit(50).exec(function (err, confirmations) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(baptisms);
+      res.jsonp(confirmations);
     }
   });
 };
 
 /**
- * List of Baptisms
+ * List of Confirmations
  */
 exports.search = function (req, res) {
   var key = req.body.key || '';
 
   var regex = { $regex: new RegExp(key, 'i') };
 
-  Baptism.find({
+  Confirmation.find({
     $or: [
       { 'child.firstName': regex },
       { 'child.middleName': regex },
       { 'child.lastName': regex }
     ]
-  }).sort('-created').populate('user', 'displayName').limit(50).exec(function (err, baptisms) {
+  }).sort('-created').populate('user', 'displayName').limit(50).exec(function (err, confirmations) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(baptisms);
+      res.jsonp(confirmations);
     }
   });
 };
 
 /**
- * Baptism middleware
+ * Confirmation middleware
  */
-exports.baptismByID = function (req, res, next, id) {
+exports.confirmationByID = function (req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
-      message: 'Baptism is invalid'
+      message: 'Confirmation is invalid'
     });
   }
 
-  Baptism.findById(id).populate('user', 'displayName').exec(function (err, baptism) {
+  Confirmation.findById(id).populate('user', 'displayName').exec(function (err, confirmation) {
     if (err) {
       return next(err);
-    } else if (!baptism) {
+    } else if (!confirmation) {
       return res.status(404).send({
-        message: 'No Baptism with that identifier has been found'
+        message: 'No Confirmation with that identifier has been found'
       });
     }
-    req.baptism = baptism;
+    req.confirmation = confirmation;
     next();
   });
 };

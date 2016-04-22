@@ -1,0 +1,31 @@
+<section>
+    <div class="page-header">
+        <h1>{{vm.marriage._id ? 'Edit Marriage' : 'Create Marriage Certificate'}}</h1>
+    </div>
+    <div class="col-md-12">
+        <form name="vm.form.birthForm" class="form-horizontal" ng-submit="vm.save()" novalidate>
+
+            <textbox  data="vm.marriage.bride" name="Bride" type="marriage"></textbox>
+            <textbox  data="vm.marriage.groom" name="Groom" type="marriage"></textbox>
+
+            <textbox  data="vm.marriage.sponsors.first" name="First Sponsor" type="fullname"></textbox>
+            <textbox  data="vm.marriage.sponsors.second" name="Second Sponsor" type="fullname"></textbox>
+            <textbox  data="vm.marriage.minister" name="Minister" type="fullname"></textbox>
+            <textbox  data="vm.marriage.marriageDate" name="Marriage Date" type="date"></textbox>
+
+            <textbox  data="vm.marriage" names="{bookNumber:'Book Number',pageNumber:'Page Number'}" type="multitextbox"></textbox>
+            <textbox  data="vm.marriage" names="{licenseNumber:'License Number',registryNumber:'Registry Number'}" type="multitextbox"></textbox>
+
+
+
+            <textbox  data="vm.marriage.remarks" name="Remarks"></textbox>
+            <div ng-show="vm.error" class="text-danger">
+                <strong ng-bind="vm.error"></strong>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">{{vm.marriage._id ? 'Update' : 'Create'}}</button>
+            </div>
+
+        </form>
+    </div>
+</section>

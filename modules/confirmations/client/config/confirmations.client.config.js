@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('baptisms')
+    .module('confirmations')
     .run(menuConfig);
 
   menuConfig.$inject = ['menuService'];
@@ -10,8 +10,8 @@
   function menuConfig(Menus) {
     // Set top bar menu items
     Menus.addMenuItem('topbar', {
-      title: 'Baptismal',
-      state: 'baptisms.list',
+      title: 'Confirmation',
+      state: 'confirmations.list',
       type: '',
       roles: ['*']
     });

@@ -5,138 +5,138 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
-  Baptism = mongoose.model('Baptism'),
+  Marriage = mongoose.model('Marriage'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
 
 /**
- * Create a Baptism
+ * Create a Marriage
  */
 exports.create = function (req, res) {
-  var baptism = new Baptism(req.body);
-  baptism.user = req.user;
+  var marriage = new Marriage(req.body);
+  marriage.user = req.user;
 
-  baptism.save(function (err) {
+  marriage.save(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(baptism);
+      res.jsonp(marriage);
     }
   });
 };
 
 /**
- * Show the current Baptism
+ * Show the current Marriage
  */
 exports.read = function (req, res) {
   // convert mongoose document to JSON
-  var baptism = req.baptism ? req.baptism.toJSON() : {};
+  var marriage = req.marriage ? req.marriage.toJSON() : {};
 
   // Add a custom field to the Article, for determining if the current User is the "owner".
   // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
-  baptism.isCurrentUserOwner = req.user && baptism.user && baptism.user._id.toString() === req.user._id.toString();
+  marriage.isCurrentUserOwner = req.user && marriage.user && marriage.user._id.toString() === req.user._id.toString();
 
-  res.jsonp(baptism);
+  res.jsonp(marriage);
 };
 
 /**
- * Update a Baptism
+ * Update a Marriage
  */
 exports.update = function (req, res) {
-  var baptism = req.baptism;
+  var marriage = req.marriage;
 
-  baptism = _.extend(baptism, req.body);
+  marriage = _.extend(marriage, req.body);
 
-  baptism.save(function (err) {
+  marriage.save(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(baptism);
+      res.jsonp(marriage);
     }
   });
 };
 
 /**
- * Delete an Baptism
+ * Delete an Marriage
  */
 exports.delete = function (req, res) {
-  var baptism = req.baptism;
+  var marriage = req.marriage;
 
-  baptism.remove(function (err) {
+  marriage.remove(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(baptism);
+      res.jsonp(marriage);
     }
   });
 };
 
 /**
- * List of Baptisms
+ * List of Marriages
  */
 exports.list = function (req, res) {
-  Baptism.find().sort('-created').populate('user', 'displayName').limit(50).exec(function (err, baptisms) {
+  Marriage.find().sort('-created').populate('user', 'displayName').limit(50).exec(function (err, marriages) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(baptisms);
+      res.jsonp(marriages);
     }
   });
 };
 
 /**
- * List of Baptisms
+ * List of Marriages
  */
 exports.search = function (req, res) {
   var key = req.body.key || '';
 
   var regex = { $regex: new RegExp(key, 'i') };
 
-  Baptism.find({
+  Marriage.find({
     $or: [
       { 'child.firstName': regex },
       { 'child.middleName': regex },
       { 'child.lastName': regex }
     ]
-  }).sort('-created').populate('user', 'displayName').limit(50).exec(function (err, baptisms) {
+  }).sort('-created').populate('user', 'displayName').limit(50).exec(function (err, marriages) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(baptisms);
+      res.jsonp(marriages);
     }
   });
 };
 
 /**
- * Baptism middleware
+ * Marriage middleware
  */
-exports.baptismByID = function (req, res, next, id) {
+exports.marriageByID = function (req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
-      message: 'Baptism is invalid'
+      message: 'Marriage is invalid'
     });
   }
 
-  Baptism.findById(id).populate('user', 'displayName').exec(function (err, baptism) {
+  Marriage.findById(id).populate('user', 'displayName').exec(function (err, marriage) {
     if (err) {
       return next(err);
-    } else if (!baptism) {
+    } else if (!marriage) {
       return res.status(404).send({
-        message: 'No Baptism with that identifier has been found'
+        message: 'No Marriage with that identifier has been found'
       });
     }
-    req.baptism = baptism;
+    req.marriage = marriage;
     next();
   });
 };

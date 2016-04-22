@@ -6,10 +6,14 @@
         <form name="vm.form.birthForm" class="form-horizontal" ng-submit="vm.save()" novalidate>
 
             <textbox  data="vm.baptism.child" name="Child" type="fullname"></textbox>
+
             <textbox  data="vm.baptism.birthday" name="Birthday Date" type="date"></textbox>
             <textbox  data="vm.baptism.baptiseday" name="Baptism Date" type="date"></textbox>
+
             <textbox  data="vm.baptism" names="{address:'Address',placeOfBirth:'Place of Baptism'}" type="multitextbox"></textbox>
+
             <textbox  data="vm.baptism.legitimate" name="Legitimate" type="boolean"></textbox>
+
             <textbox  data="vm.baptism.parents.mother" name="Mother" type="fullname"></textbox>
             <textbox  data="vm.baptism.parents.father" name="Father" type="fullname"></textbox>
             <textbox  data="vm.baptism.minister" name="Minister" type="fullname"></textbox>

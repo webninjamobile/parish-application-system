@@ -1,0 +1,55 @@
+<div class="form-print" id="print-head">
+    <img src="/images/Jesus.png" alt="" id="shj"/>
+    <h1>Sacred Heart of Jesus Parish</h1>
+    <h2>Pajac, Lapu-Lapu City Tel No: 505-0713</h2>
+    <h3>Parish Canonical Erection: 14 June 1996</h3>
+    <h3>Parish Feastday: May 1 &mdash; St. Joseph, the Workder and Protector</h3>
+    <p>&nbsp;</p>
+    <hr/>
+</div>
+<div id="print">
+
+<div id="print-body">
+    <h1 id="main-title">Certificate of Marriage</h1>
+    <h2>This is to acknowledge that</h2>
+    <h2 class="print-values">{{vm.marriage.child.firstName}} {{vm.marriage.child.lastName}} </h2>
+    <h2>Child of </h2>
+    <h2><span class="print-values">{{vm.marriage.parents.father.firstName}} {{vm.marriage.parents.father.lastName}}</span>
+        and
+        <span class="print-values">{{vm.marriage.parents.mother.firstName}} {{vm.marriage.parents.mother.lastName}}</span> </h2>
+    <h2>&nbsp;</h2>
+    <h1 id="sub-title">Was Solemnly Confirmed According <br>to the Rite of the Roman Catholic Church</h1>
+    <h2>&nbsp;</h2>
+    <h2>On <span class="print-values">{{vm.marriage.marriageDate | date:('MMMM d, y')}}</span>
+        by the Rev. Fr.
+        <span class="print-values">{{vm.marriage.minister.firstName}} {{vm.marriage.minister.lastName}}</span>
+    </h2>
+    <h2>&nbsp;</h2>
+    <h2>The sponsors being
+        <span class="print-values">{{vm.marriage.sponsors.first.firstName}} {{vm.marriage.sponsors.first.lastName}}</span>
+        and
+        <span class="print-values">{{vm.marriage.sponsors.second.firstName}} {{vm.marriage.sponsors.second.lastName}}</span>
+    </h2>
+    <h2>&nbsp;</h2>
+    <h3>As appears from the Marriageal Register</h3>
+    <h3>
+        Book #<span class="print-values">{{vm.marriage.bookNumber}}</span>,
+        Page #<span class="print-values">{{vm.marriage.pageNumber}}</span>
+    </h3>
+    <h3>&nbsp;</h3>
+    <h3>
+        Date <span class="print-values">{{vm.marriage.created | date:('MMMM d, y')}}</span>
+    </h3>
+</div>
+
+    <div id="print-footer">
+        <hr/>
+        <img src="/images/msc.png" alt="" id="msc"/>
+        <p>The Sacred Heart of Jesus Parish, Pajac, Lapu-Lapu City is under the adminstration of the Missionaries of the Sacred Heart(MSC).
+        It is an international congregation of Priests and Brothers founded in France on December ,1954 by Rev Fr. Jules Chevalier.
+            It aims to make the Most Sacred Heart of Jesus be loved and known everywhere!
+        </p>
+
+    </div>
+
+</div>

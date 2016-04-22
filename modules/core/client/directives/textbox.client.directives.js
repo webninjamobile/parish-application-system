@@ -20,6 +20,7 @@
           showWeeks: false,
           appendToBody: true
         };
+        scope.withLegalStatus = attrs.withLegalStatus || false;
       },
       templateUrl: function (elem, attrs) {
         var type = attrs.type || 'textbox';

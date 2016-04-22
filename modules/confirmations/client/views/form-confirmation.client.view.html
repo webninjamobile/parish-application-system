@@ -1,0 +1,27 @@
+<section>
+    <div class="page-header">
+        <h1>{{vm.confirmation._id ? 'Edit Confirmation' : 'Create Confirmation Certificate'}}</h1>
+    </div>
+    <div class="col-md-12">
+        <form name="vm.form.birthForm" class="form-horizontal" ng-submit="vm.save()" novalidate>
+
+            <textbox  data="vm.confirmation.child" name="Child" type="fullname"></textbox>
+            <textbox  data="vm.confirmation.address" name="Address" ></textbox>
+            <textbox  data="vm.confirmation.confirmationDate" name="Confirmation Date" type="date"></textbox>
+            <textbox  data="vm.confirmation.parents.mother" name="Mother" type="fullname"></textbox>
+            <textbox  data="vm.confirmation.parents.father" name="Father" type="fullname"></textbox>
+            <textbox  data="vm.confirmation.minister" name="Minister" type="fullname"></textbox>
+            <textbox  data="vm.confirmation.sponsors.first" name="First Sponsor" type="fullname"></textbox>
+            <textbox  data="vm.confirmation.sponsors.second" name="Second Sponsor" type="fullname"></textbox>
+            <textbox  data="vm.confirmation" names="{bookNumber:'Book Number',pageNumber:'Page Number'}" type="multitextbox"></textbox>
+            <textbox  data="vm.confirmation.remarks" name="Remarks"></textbox>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">{{vm.confirmation._id ? 'Update' : 'Create'}}</button>
+            </div>
+            <div ng-show="vm.error" class="text-danger">
+                <strong ng-bind="vm.error"></strong>
+            </div>
+        </form>
+    </div>
+</section>
