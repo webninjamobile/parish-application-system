@@ -1,0 +1,12 @@
+body{
+    zoom: 50%;
+}
+
+#print-body{
+    padding-top: 50px;
+    height: 1150px;
+}
+
+#print-body .print-values {
+    border-bottom: solid #000 1px;
+}

@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="form-group col-md-6" ng-repeat="(key,name) in names">
+        <div class="row">
+            <label class="control-label col-md-4" for="{{name}}">{{name}}</label>
+            <div class="col-md-8">
+                <input type="text" ng-model="model[key]" class="form-control"
+                       placeholder="{{name}}"/>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="clearfix"/>
