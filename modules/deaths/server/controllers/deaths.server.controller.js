@@ -102,9 +102,9 @@ exports.search = function (req, res) {
 
   Death.find({
     $or: [
-      { 'child.firstName': regex },
-      { 'child.middleName': regex },
-      { 'child.lastName': regex }
+      { 'name.firstName': regex },
+      { 'name.middleName': regex },
+      { 'name.lastName': regex }
     ]
   }).sort('-created').populate('user', 'displayName').limit(50).exec(function (err, deaths) {
     if (err) {
