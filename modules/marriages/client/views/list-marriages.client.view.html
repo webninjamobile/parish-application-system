@@ -16,6 +16,7 @@
         <th>Date Added</th>
         <th>&nbsp;</th>
         <th>&nbsp;</th>
+        <th>&nbsp;</th>
       </tr>
     <tr data-ng-repeat="marriage in vm.marriages">
         <td><a data-ui-sref="marriages.view({ marriageId: marriage._id })">{{marriage.parties.groom.firstName}}</a></td>
@@ -25,8 +26,8 @@
         <td>{{marriage.created | date:'mediumDate'}}</td>
         <td>
             <a class="btn btn-info btn-sm" data-ui-sref="marriages.edit({ marriageId: marriage._id })">Edit</a>
-            <a class="btn btn-primary btn-sm" href="/api/print/marriage/{{marriage._id}}">Print</a>
         </td>
+        <td><a target="_blank" href="/marriages/{{marriage._id}}/print/" class="btn btn-success btn-sm">Print PDF</a></td>
         <td><a ng-click="vm.remove(marriage)" class="btn btn-danger btn-sm">Delete</a></td>
     </tr>
   </table>

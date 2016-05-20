@@ -62,7 +62,7 @@
         }
       })
       .state('baptisms.print', {
-        url: '/:baptismId/print',
+        url: '/:baptismId/preview',
         templateUrl: 'modules/baptisms/client/views/view-baptism.client.view.html',
         controller: 'BaptismsController',
         controllerAs: 'vm',

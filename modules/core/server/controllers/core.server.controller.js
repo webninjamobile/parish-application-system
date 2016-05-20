@@ -1,6 +1,8 @@
 'use strict';
 
-var validator = require('validator');
+var validator = require('validator'),
+  path = require('path'),
+  exec = require('child_process').exec;
 
 /**
  * Render the main application page
@@ -28,8 +30,7 @@ exports.renderIndex = function (req, res) {
   });
 };
 
-exports.renderPrint = function (req, res) {
-
+exports.renderPrintPreview = function (req, res) {
   var safeUserObject = null;
   if (req.user) {
     safeUserObject = {
@@ -49,6 +50,18 @@ exports.renderPrint = function (req, res) {
   res.render('modules/core/server/views/print', {
     user: safeUserObject
   });
+};
+
+exports.renderPrint = function (req, res) {
+  var type = req.params.type;
+  var id = req.params.id;
+  var filename = id + '.pdf';
+  var url = 'http://localhost:3000/' + type + '/' + id + '/preview';
+  var cmd = '/usr/local/bin/phantomjs print.js ' + id + ' ' + url;
+  exec(cmd, function () {
+    res.redirect('/pdf/' + filename);
+  });
+
 };
 
 /**
@@ -82,3 +95,4 @@ exports.renderNotFound = function (req, res) {
     }
   });
 };
+

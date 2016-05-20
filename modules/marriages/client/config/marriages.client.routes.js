@@ -62,7 +62,7 @@
         }
       })
       .state('marriages.print', {
-        url: '/:marriageId/print',
+        url: '/:marriageId/preview',
         templateUrl: 'modules/marriages/client/views/view-marriage.client.view.html',
         controller: 'MarriagesController',
         controllerAs: 'vm',

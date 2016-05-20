@@ -1,0 +1,42 @@
+<section>
+
+    <h1>Death Certificates <a data-ui-sref="deaths.create()" class="pull-right btn btn-info">Create</a></h1>
+    <p class="input-group">
+        <input type="text" placeholder="Search By First Name or Last Name" class="form-control" ng-model="vm.key"/>
+          <span class="input-group-btn">
+                <button ng-click="vm.search()" class="btn btn-default " type="button">Search</button>
+          </span>
+    </p>
+  <table class="table table-striped">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Date</th>
+        <th>Minister</th>
+        <th>Date Added</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    <tr data-ng-repeat="death in vm.deaths">
+        <td><a data-ui-sref="deaths.view({ deathId: death._id })">{{death.name.firstName}}</a></td>
+        <td><a data-ui-sref="deaths.view({ deathId: death._id })">{{death.name.lastName}}</a></td>
+        <td>{{death.deathday | date:'mediumDate'}}</td>
+        <td>{{death.minister.firstName}} {{death.minister.lastName}}</td>
+        <td>{{death.created | date:'mediumDate'}}</td>
+        <td>
+            <a class="btn btn-info btn-sm" data-ui-sref="deaths.edit({ deathId: death._id })">Edit</a>
+        </td>
+        <td>
+            <a target="_blank" class="btn btn-primary btn-sm" href="/deaths/{{death._id}}/print">Print</a>
+            <a class="btn btn-default btn-sm" href="/deaths/{{death._id}}/">Preview</a>
+        </td>
+        <td><a ng-click="vm.remove(death)" class="btn btn-danger btn-sm">Delete</a></td>
+    </tr>
+  </table>
+
+  <div class="alert alert-warning text-center" data-ng-if="vm.deaths.$resolved && !vm.deaths.length">
+    No Death Certicates
+  </div>
+</section>

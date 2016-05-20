@@ -16,6 +16,7 @@
         <th>Date Added</th>
         <th>&nbsp;</th>
         <th>&nbsp;</th>
+        <th>&nbsp;</th>
       </tr>
     <tr data-ng-repeat="confirmation in vm.confirmations">
         <td><a data-ui-sref="confirmations.view({ confirmationId: confirmation._id })">{{confirmation.child.firstName}}</a></td>
@@ -25,7 +26,9 @@
         <td>{{confirmation.created | date:'mediumDate'}}</td>
         <td>
             <a class="btn btn-info btn-sm" data-ui-sref="confirmations.edit({ confirmationId: confirmation._id })">Edit</a>
-            <a class="btn btn-primary btn-sm" href="/api/print/confirmation/{{confirmation._id}}">Print</a>
+        </td>
+        <td>
+            <a target="_blank" class="btn btn-primary btn-sm" href="/confirmations/{{confirmation._id}}/print">Print</a>
         </td>
         <td><a ng-click="vm.remove(confirmation)" class="btn btn-danger btn-sm">Delete</a></td>
     </tr>

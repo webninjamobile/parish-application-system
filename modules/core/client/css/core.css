@@ -112,15 +112,15 @@ a:hover .header-profile-image {
 }
 
 #print-head h1{
-  font-size: 20px;
+  font-size: 25px;
 }
 
 #print-head h2{
-  font-size: 15px;
+  font-size: 20px;
 }
 
 #print-head h3{
-  font-size: 12px;
+  font-size: 18px;
 }
 
 #print-head h1, #print-head h2, #print-head h3{
@@ -192,3 +192,8 @@ a:hover .header-profile-image {
 #print-footer p{
 
 }
+
+#print-body h2#recipient-name{
+  font-size: 40px;
+}
+

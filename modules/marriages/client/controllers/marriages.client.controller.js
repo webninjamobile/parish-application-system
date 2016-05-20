@@ -8,7 +8,7 @@
 
   MarriagesController.$inject = ['$scope', '$state', 'Authentication', 'marriageResolve', '$window'];
 
-  function MarriagesController ($scope, $state, Authentication, marriage, $window) {
+  function MarriagesController($scope, $state, Authentication, marriage, $window) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -23,10 +23,6 @@
       if ($window.confirm('Are you sure you want to delete?')) {
         vm.marriage.$remove($state.go('marriages.list'));
       }
-    }
-
-    function age(bday){
-
     }
 
     // Save Marriage
@@ -52,11 +48,12 @@
     function isLeapYear(year) {
       var d = new Date(year, 1, 28);
       d.setDate(d.getDate() + 1);
-      return d.getMonth() == 1;
+      return d.getMonth() === 1;
     }
 
     function age(date) {
-      var d = new Date(date), now = new Date();
+      var d = new Date(date);
+      var now = new Date();
       var years = now.getFullYear() - d.getFullYear();
       d.setFullYear(d.getFullYear() + years);
       if (d > now) {

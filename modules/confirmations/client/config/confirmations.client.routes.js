@@ -62,7 +62,7 @@
         }
       })
       .state('confirmations.print', {
-        url: '/:confirmationId/print',
+        url: '/:confirmationId/preview',
         templateUrl: 'modules/confirmations/client/views/view-confirmation.client.view.html',
         controller: 'ConfirmationsController',
         controllerAs: 'vm',
