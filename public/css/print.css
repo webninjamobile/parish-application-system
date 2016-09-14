@@ -1,12 +1,21 @@
 body{
-    zoom: 67%;
+    zoom: 47%;
 }
 
 #print-body{
-    padding-top: 50px;
-    height: 1150px;
+    height: 1250px;
 }
 
 #print-body .print-values {
     border-bottom: solid #777 1px;
 }
+
+#print-body{
+    line-height: 120%;
+}
+
+div{
+    /*border: solid 1px blue;*/
+}
+
+

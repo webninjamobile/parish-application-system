@@ -5,44 +5,69 @@
     <h2>Pajac, Lapu-Lapu City</h2>
     <h3>Parish Canonical Erection: 14 June 1996</h3>
     <h3>Parish Feastday: May 1 &mdash; St. Joseph, the Workder and Protector</h3>
-    <p>&nbsp;</p>
-    <hr/>
 </div>
 <div id="print">
 
 <div id="print-body">
-    <h1 id="main-title">Certificate of Baptism</h1>
-    <h2>This is to acknowledge that</h2>
-    <h2 id="recipient-name" class="print-values">{{vm.baptism.child.firstName}} {{vm.baptism.child.lastName}} </h2>
-    <h2>Child of </h2>
-    <h2><span class="print-values">{{vm.baptism.parents.father.firstName}} {{vm.baptism.parents.father.lastName}}</span>
+    <h2 class="spacer">&nbsp;</h2>
+    <h1 id="main-title" class="text-center">Certificate of Baptism</h1>
+    <h2 class="text-center">This is to certify</h2>
+    <h2 class="spacer">&nbsp;</h2>
+    <h2 class="spacer">&nbsp;</h2>
+    <h2>That <span class="print-values blank-900"  id="recipient-name">{{vm.baptism.child.firstName}} {{vm.baptism.child.lastName}}</span> child of</h2>
+    <h2><span class="print-values  blank-1200">{{vm.baptism.parents.father.firstName}} {{vm.baptism.parents.father.lastName}}</span>
         and
-        <span class="print-values">{{vm.baptism.parents.mother.firstName}} {{vm.baptism.parents.mother.lastName}}</span> </h2>
-    <h2>&nbsp;</h2>
-    <h2>Born in <span class="print-values">{{vm.baptism.address}}</span> on <span class="print-values"> {{vm.baptism.birthday | date:('MMMM d, y')}}</span></h2>
-    <h2>&nbsp;</h2>
-    <h1 id="sub-title">Was Solemnly Baptized According <br>to the Rite of the Roman Catholic Church</h1>
-    <h2>&nbsp;</h2>
-    <h2>On <span class="print-values">{{vm.baptism.baptiseday | date:('MMMM d, y')}}</span>
-        by the Rev. Fr.
-        <span class="print-values">{{vm.baptism.minister.firstName}} {{vm.baptism.minister.lastName}}</span>
+        <span class="print-values blank-1200">{{vm.baptism.parents.mother.firstName}} {{vm.baptism.parents.mother.lastName}}</span> </h2>
+    <h2 class="spacer">&nbsp;</h2>
+
+    <h2>Born in <span class="print-values blank-900">{{vm.baptism.address}}</span> on the</h2>
+    <h2>
+        <span class="print-values blank-150">
+            {{vm.baptism.birthday | date:('d')}}
+            <sup>{{vm.baptism.birthday | date:('d') | ordinal}}</sup>
+        </span>
+
+        day of
+        <span class="print-values blank-300">{{vm.baptism.birthday | date:('MMMM')}}</span>
+        <span class="print-values blank-300">{{vm.baptism.birthday | date:('y')}}</span>
     </h2>
-    <h2>&nbsp;</h2>
+    <h2 class="spacer">&nbsp;</h2>
+    <h1 id="sub-title" class="text-center">Was Solemnly Baptized According <br>to the Rite of the Roman Catholic Church</h1>
+    <h2 class="spacer">&nbsp;</h2>
+    <h2>On the
+        <span class="print-values blank-150">
+            {{vm.baptism.baptiseday | date:('d')}}
+            <sup>{{vm.baptism.baptiseday | date:('d') | ordinal}}</sup>
+        </span>
+
+        day of
+        <span class="print-values blank-300">{{vm.baptism.baptiseday | date:('MMMM')}}</span>
+        <span class="print-values blank-300">{{vm.baptism.baptiseday | date:('y')}}</span>
+    </h2>
+    <h2>
+        by <span class="print-values blank-900">{{vm.baptism.minister.firstName}} {{vm.baptism.minister.lastName}}</span>
+    </h2>
+    <h2 class="spacer">&nbsp;</h2>
+    <h2 class="spacer">&nbsp;</h2>
     <h2>The sponsors being
-        <span class="print-values">{{vm.baptism.sponsors.first.firstName}} {{vm.baptism.sponsors.first.lastName}}</span>
+        <span class="print-values blank-700">{{vm.baptism.sponsors.first.firstName}} {{vm.baptism.sponsors.first.lastName}}</span>
         and
-        <span class="print-values">{{vm.baptism.sponsors.second.firstName}} {{vm.baptism.sponsors.second.lastName}}</span>
+        <span class="print-values blank-900">{{vm.baptism.sponsors.second.firstName}} {{vm.baptism.sponsors.second.lastName}}</span>
     </h2>
-    <h2>&nbsp;</h2>
-    <h3>As appears from the Baptismal Register</h3>
+    <h2 class="spacer">&nbsp;</h2>
+    <h3>As appears from the Baptismal Register
+        Book #<span class="print-values blank-150">{{vm.baptism.bookNumber}}</span>,
+        Page #<span class="print-values blank-150">{{vm.baptism.pageNumber}}</span>
+    </h3>
     <h3>
-        Book #<span class="print-values">{{vm.baptism.bookNumber}}</span>,
-        Page #<span class="print-values">{{vm.baptism.pageNumber}}</span>
+        Date <span class="print-values blank-150">{{vm.baptism.created | date:('MMMM d, y')}}</span>
     </h3>
     <h3>&nbsp;</h3>
-    <h3>
-        Date <span class="print-values">{{vm.baptism.created | date:('MMMM d, y')}}</span>
+    <h3 class="text-center">
+        <img src="/images/signature.png" alt="" id="signature" width="450"/>
+        <span id="priest-name">Rev Fr. Lito Redondo, MSC</span><br>
     </h3>
+    <h3 class="text-center">Parish Priest</h3>
 </div>
 
     <div id="print-footer">

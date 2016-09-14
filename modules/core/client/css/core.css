@@ -131,26 +131,27 @@ a:hover .header-profile-image {
 
 #shj{
   float: left;
-  width: 100px;
-  border-radius: 50px;
+  width: 180px;
+  border-radius: 90px;
   position: absolute;
 }
 
 #print-body{
-  text-align: center;
   font-size: 20px;
 }
 
 #main-title{
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-family: 'chopinscriptmedium';
   font-size: 80px;
+  margin-top: 20px;
 }
 
 #print-body h2{
   font-weight: normal;
   font-size: 28px;
   font-family: 'Droid Serif';
+    margin: 0;
 }
 
 #print-body h3{
@@ -161,9 +162,9 @@ a:hover .header-profile-image {
 
 #print-body .print-values{
   border-bottom:  solid #888 1px;
-  padding-bottom: 10px;
-  text-transform: capitalize;
-  margin-bottom: 40px;
+  padding-bottom: 3px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
   font-weight: bold;
 }
 
@@ -193,6 +194,51 @@ a:hover .header-profile-image {
 
 }
 
-#print-body h2#recipient-name{
-  font-size: 40px;
+#print-body span#recipient-name{
+  text-transform: uppercase;
+}
+
+#print-body .blank-1200,#print-body .blank-900, #print-body .blank-300, #print-body .blank-150, #print-body .blank-50, #print-body .blank-700{
+    width: 900px;
+    display: inline-block;
+    text-align: center;
+}
+
+#print-body .print-values sup{
+    text-transform: lowercase;
+}
+
+#print-body .blank-1200{
+    width: 1020px;
+}
+
+#print-body .blank-300{
+    width: 300px;
+}
+
+#print-body .blank-150{
+    width: 200px;
+}
+
+#print-body .blank-50{
+    width: 100px;
+}
+
+#print-body .blank-700{
+    width: 700px;
+}
+
+#priest-name{
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+#signature{
+    margin-left: -60px;
+    margin-top: -80px;
+    position: absolute;
+}
+
+.spacer{
+    height: 20px;
 }
