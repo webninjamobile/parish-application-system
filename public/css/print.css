@@ -2,6 +2,23 @@ body{
     zoom: 47%;
 }
 
+#page-border{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+#print-wrapper{
+    padding: 50px;
+    padding-top: 80px;
+    padding-left: 90px;
+}
+
+#shj{
+    margin-left: 60px;
+    margin-top: 30px;
+}
+
 #print-body{
     height: 1250px;
 }
@@ -19,3 +36,7 @@ div{
 }
 
 
+#print-footer{
+    padding-left: 100px;
+    padding-right: 200px;
+}

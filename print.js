@@ -9,7 +9,7 @@ if(format == '.pdf'){
   page.paperSize = {
     format: 'A4',
     orientation: 'portrait',
-    margin: '1cm'
+    margin: 0
   }
 
 }
