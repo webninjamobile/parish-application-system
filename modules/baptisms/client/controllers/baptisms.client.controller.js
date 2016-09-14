@@ -35,9 +35,7 @@
       }
 
       function successCallback(res) {
-        $state.go('baptisms.view', {
-          baptismId: res._id
-        });
+        $state.go('baptisms.list');
       }
 
       function errorCallback(res) {

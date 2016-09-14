@@ -35,9 +35,7 @@
       }
 
       function successCallback(res) {
-        $state.go('confirmations.view', {
-          confirmationId: res._id
-        });
+        $state.go('confirmations.list');
       }
 
       function errorCallback(res) {

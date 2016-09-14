@@ -35,9 +35,7 @@
       }
 
       function successCallback(res) {
-        $state.go('deaths.view', {
-          deathId: res._id
-        });
+        $state.go('deaths.list');
       }
 
       function errorCallback(res) {

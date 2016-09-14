@@ -149,13 +149,13 @@ a:hover .header-profile-image {
 
 #print-body h2{
   font-weight: normal;
-  font-size: 22px;
+  font-size: 28px;
   font-family: 'Droid Serif';
 }
 
 #print-body h3{
   font-weight: normal;
-  font-size: 18px;
+  font-size: 22px;
   font-family: 'Droid Serif';
 }
 
@@ -169,7 +169,7 @@ a:hover .header-profile-image {
 
 #sub-title{
   font-family: 'chopinscriptmedium';
-  font-size: 40px;
+  font-size: 45px;
 }
 
 #print{
@@ -196,4 +196,3 @@ a:hover .header-profile-image {
 #print-body h2#recipient-name{
   font-size: 40px;
 }
-

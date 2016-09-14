@@ -35,9 +35,7 @@
       }
 
       function successCallback(res) {
-        $state.go('marriages.view', {
-          marriageId: res._id
-        });
+        $state.go('marriages.list');
       }
 
       function errorCallback(res) {
