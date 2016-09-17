@@ -10,7 +10,6 @@ Thumbs.db
 .nodemonignore
 .sass-cache/
 node_modules/
-public/lib/
 public/pdf/
 app/tests/coverage/
 .bower-*/
