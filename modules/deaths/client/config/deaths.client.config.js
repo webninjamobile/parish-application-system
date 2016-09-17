@@ -13,7 +13,7 @@
       title: 'Deaths',
       state: 'deaths.list',
       type: '',
-      roles: ['*']
+      roles: ['admin']
     });
 
   }

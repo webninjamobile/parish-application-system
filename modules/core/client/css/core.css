@@ -163,7 +163,6 @@ a:hover .header-profile-image {
 #print-body .print-values{
   border-bottom:  solid #888 1px;
   padding-bottom: 3px;
-  text-transform: uppercase;
   margin-bottom: 30px;
   font-weight: bold;
 }
@@ -229,8 +228,13 @@ a:hover .header-profile-image {
 }
 
 #priest-name{
-    text-decoration: underline;
     text-transform: uppercase;
+    font-size: 28px;
+  margin: 0;
+}
+
+#priest-name span{
+  text-decoration: underline;
 }
 
 #signature{

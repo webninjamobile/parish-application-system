@@ -13,7 +13,7 @@
       title: 'Marriage',
       state: 'marriages.list',
       type: '',
-      roles: ['*']
+      roles: ['admin']
     });
 
   }

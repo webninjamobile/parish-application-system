@@ -13,7 +13,7 @@
       title: 'Confirmation',
       state: 'confirmations.list',
       type: '',
-      roles: ['*']
+      roles: ['admin']
     });
 
   }

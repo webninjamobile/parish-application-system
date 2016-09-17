@@ -13,7 +13,7 @@
       title: 'Baptismal',
       state: 'baptisms.list',
       type: '',
-      roles: ['*']
+      roles: ['admin']
     });
 
   }
