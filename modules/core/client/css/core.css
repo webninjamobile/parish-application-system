@@ -227,7 +227,7 @@ a:hover .header-profile-image {
     width: 700px;
 }
 
-#priest-name{
+#print-body h3#priest-name{
     text-transform: uppercase;
     font-size: 28px;
   margin: 0;
@@ -238,7 +238,7 @@ a:hover .header-profile-image {
 }
 
 #signature{
-    margin-left: -60px;
+    margin-left: -35px;
     margin-top: -80px;
     position: absolute;
 }
