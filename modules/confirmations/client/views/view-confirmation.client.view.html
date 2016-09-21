@@ -1,55 +1,48 @@
-<div class="form-print" id="print-head">
-    <img src="/images/Jesus.png" alt="" id="shj"/>
-    <h1>Sacred Heart of Jesus Parish</h1>
-    <h2>Pajac, Lapu-Lapu City Tel No: 505-0713</h2>
-    <h3>Parish Canonical Erection: 14 June 1996</h3>
-    <h3>Parish Feastday: May 1 &mdash; St. Joseph, the Workder and Protector</h3>
-    <p>&nbsp;</p>
-    <hr/>
-</div>
-<div id="print">
+    <h1  id="main-title" class="text-center">Certificate of Confirmation</h1>
+    <h2 class="text-center">This is to certify</h2>
+    <h2 class="spacer">&nbsp;</h2>
+    <h2 class="spacer">&nbsp;</h2>
 
-<div id="print-body">
-    <h1 id="main-title">Certificate of Confirmation</h1>
-    <h2>This is to acknowledge that</h2>
-    <h2 id="recipient-name" class="print-values">{{vm.confirmation.child.firstName}} {{vm.confirmation.child.lastName}} </h2>
-    <h2>Child of </h2>
-    <h2><span class="print-values">{{vm.confirmation.parents.father.firstName}} {{vm.confirmation.parents.father.lastName}}</span>
+    <h2>That <span class="print-values blank-900"  id="recipient-name">{{vm.confirmation.child.firstName}} {{vm.confirmation.child.lastName}}</span> child of</h2>
+    <h2><span class="print-values  blank-1200">{{vm.confirmation.parents.father.firstName}} {{vm.confirmation.parents.father.lastName}}</span>
         and
-        <span class="print-values">{{vm.confirmation.parents.mother.firstName}} {{vm.confirmation.parents.mother.lastName}}</span> </h2>
-    <h2>&nbsp;</h2>
-    <h1 id="sub-title">Was Solemnly Confirmed According <br>to the Rite of the Roman Catholic Church</h1>
-    <h2>&nbsp;</h2>
-    <h2>On <span class="print-values">{{vm.confirmation.confirmationDate | date:('MMMM d, y')}}</span>
-        by the Rev. Fr.
-        <span class="print-values">{{vm.confirmation.minister.firstName}} {{vm.confirmation.minister.lastName}}</span>
+        <span class="print-values blank-1200">{{vm.confirmation.parents.mother.firstName}} {{vm.confirmation.parents.mother.lastName}}</span> </h2>
+    <h2 class="spacer">&nbsp;</h2>
+
+    <h2 class="spacer">&nbsp;</h2>
+    <h1 id="sub-title" class="text-center">Was Solemnly Confirmed According <br>to the Rite of the Roman Catholic Church</h1>
+    <h2 class="spacer">&nbsp;</h2>
+    <h2 class="spacer">&nbsp;</h2>
+    <h2 class="spacer">&nbsp;</h2>
+    <h2>On the
+        <span class="print-values blank-150">
+            {{vm.confirmation.confirmationDate | date:('d')}}
+            <sup>{{vm.confirmation.confirmationDate | date:('d') | ordinal}}</sup>
+        </span>
+
+        day of
+        <span class="print-values blank-300">{{vm.confirmation.confirmationDate | date:('MMMM')}}</span>
+        <span class="print-values blank-300">{{vm.confirmation.confirmationDate | date:('y')}}</span>
     </h2>
-    <h2>&nbsp;</h2>
+    <h2>
+        by <span class="print-values blank-900">{{vm.confirmation.minister.firstName}} {{vm.confirmation.minister.lastName}}</span>
+    </h2>
+    <h2 class="spacer">&nbsp;</h2>
+    <h2 class="spacer">&nbsp;</h2>
     <h2>The sponsors being
-        <span class="print-values">{{vm.confirmation.sponsors.first.firstName}} {{vm.confirmation.sponsors.first.lastName}}</span>
+        <span class="print-values blank-700">{{vm.confirmation.sponsors.first.firstName}} {{vm.confirmation.sponsors.first.lastName}}</span>
         and
-        <span class="print-values">{{vm.confirmation.sponsors.second.firstName}} {{vm.confirmation.sponsors.second.lastName}}</span>
+        <span class="print-values blank-900">{{vm.confirmation.sponsors.second.firstName}} {{vm.confirmation.sponsors.second.lastName}}</span>
     </h2>
-    <h2>&nbsp;</h2>
-    <h3>As appears from the Confirmational Register</h3>
-    <h3>
-        Book #<span class="print-values">{{vm.confirmation.bookNumber}}</span>,
-        Page #<span class="print-values">{{vm.confirmation.pageNumber}}</span>
+    <h2 class="spacer">&nbsp;</h2>
+    <h3>As appears from the Confirmational Register
+        Book #<span class="print-values blank-150">{{vm.confirmation.bookNumber}}</span>,
+        Page #<span class="print-values blank-150">{{vm.confirmation.pageNumber}}</span>
     </h3>
-    <h3>&nbsp;</h3>
     <h3>
-        Date <span class="print-values">{{vm.confirmation.created | date:('MMMM d, y')}}</span>
+        Date <span class="print-values blank-150">{{vm.confirmation.created | date:('MMMM d, y')}}</span>
     </h3>
-</div>
 
-    <div id="print-footer">
-        <hr/>
-        <img src="/images/msc.png" alt="" id="msc"/>
-        <p>The Sacred Heart of Jesus Parish, Pajac, Lapu-Lapu City is under the administration of the Missionaries of the Sacred Heart(MSC).
-        It is an international congregation of Priests and Brothers founded in France on December ,1954 by Rev Fr. Jules Chevalier.
-            It aims to make the Most Sacred Heart of Jesus be loved and known everywhere!
-        </p>
-
-    </div>
-
-</div>
+    <h2 class="spacer">&nbsp;</h2>
+    <h2 class="spacer">&nbsp;</h2>
+    <h2 class="spacer">&nbsp;</h2>

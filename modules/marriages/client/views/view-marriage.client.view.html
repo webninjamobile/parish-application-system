@@ -1,75 +1,59 @@
-<div class="form-print" id="print-head">
-    <img src="/images/Jesus.png" alt="" id="shj"/>
-    <h1>Sacred Heart of Jesus Parish</h1>
-    <h2>Pajac, Lapu-Lapu City Tel No: 505-0713</h2>
-    <h3>Parish Canonical Erection: 14 June 1996</h3>
-    <h3>Parish Feastday: May 1 &mdash; St. Joseph, the Workder and Protector</h3>
-    <p>&nbsp;</p>
-    <hr/>
-</div>
-<div id="print">
+<h1 id="main-title" class="text-center">Certificate of Marriage</h1>
+<h2 class="text-center marginN20">This is to certify</h2>
+<h2 class="spacer"></h2>
+<h2>That <span class="print-values blank-800 recipient-name">{{vm.marriage.parties.groom.firstName}} {{vm.marriage.parties.groom.lastName}}</span>
+    {{vm.age(vm.marriage.parties.groom.birthday)}} yrs old.</h2>
 
-<div id="print-body">
-    <h1 id="main-title">Certificate of Marriage</h1>
-    <h2>This is to acknowledge that
-    <span class="print-values">{{vm.marriage.parties.groom.firstName}} {{vm.marriage.parties.groom.lastName}}</span>,
-    {{vm.age(vm.marriage.parties.groom.birthday)}} yrs old.
-        </h2>
-    <h2>
-        a native of {{vm.marriage.parties.groom.birthplace}}
-        and a resident of {{vm.marriage.parties.groom.address}}
-    </h2>
-    <h2>Child of <span class="print-values">{{vm.marriage.parties.groom.father.firstName}} {{vm.marriage.parties.groom.father.lastName}}</span>
-        and
-        <span class="print-values">{{vm.marriage.parties.groom.mother.firstName}} {{vm.marriage.parties.groom.mother.lastName}}</span> </h2>
-    <h2>&nbsp;</h2>
-    <h1 id="sub-title">Has Contracted Marriage According <br>to the Rite of the Roman Catholic Church</h1>
-    <h2>&nbsp;</h2>
-    <h2>With
-        <span class="print-values">{{vm.marriage.parties.bride.firstName}} {{vm.marriage.parties.bride.lastName}}</span>,
-        {{vm.age(vm.marriage.parties.bride.birthday)}} yrs old.
-    </h2>
-    <h2>
-        a native of {{vm.marriage.parties.bride.birthplace}}
-        and a resident of {{vm.marriage.parties.bride.address}}
-    </h2>
-    <h2>Child of <span class="print-values">{{vm.marriage.parties.bride.father.firstName}} {{vm.marriage.parties.bride.father.lastName}}</span>
-        and
-        <span class="print-values">{{vm.marriage.parties.bride.mother.firstName}} {{vm.marriage.parties.bride.mother.lastName}}</span> </h2>
-    <h2>&nbsp;</h2>
+<h2>a native of <span class="print-values blank-600">{{vm.marriage.parties.groom.birthplace}}</span> and a resident of
+</h2>
+<h2><span class="print-values blank-1200">{{vm.marriage.parties.groom.address}}</span></h2>
 
-    <h2>On <span class="print-values">{{vm.marriage.marriageDate | date:('MMMM d, y')}}</span>
-        by the Rev. Fr.
-        <span class="print-values">{{vm.marriage.minister.firstName}} {{vm.marriage.minister.lastName}}</span>
-    </h2>
-    <h2>&nbsp;</h2>
-    <h2>The sponsors being
-        <span class="print-values">{{vm.marriage.sponsors.first.firstName}} {{vm.marriage.sponsors.first.lastName}}</span>
-        and
-        <span class="print-values">{{vm.marriage.sponsors.second.firstName}} {{vm.marriage.sponsors.second.lastName}}</span>
-    </h2>
-    <h2>&nbsp;</h2>
-    <h3>As appears from the Marriage Register</h3>
-    <h3>
-        Book #<span class="print-values">{{vm.marriage.bookNumber}}</span>,
-        Page #<span class="print-values">{{vm.marriage.pageNumber}}</span> &
-        License #<span class="print-values">{{vm.marriage.licenseNumber}}</span>,
-        Registry #<span class="print-values">{{vm.marriage.registryNumber}}</span>
-    </h3>
-    <h3>&nbsp;</h3>
-    <h3>
-        Date <span class="print-values">{{vm.marriage.created | date:('MMMM d, y')}}</span>
-    </h3>
-</div>
+<h2>Child of
+    <span class="print-values blank-childOf">{{vm.marriage.parties.groom.father.firstName}} {{vm.marriage.parties.groom.father.lastName}}
+    &amp; {{vm.marriage.parties.groom.mother.firstName}} {{vm.marriage.parties.groom.mother.lastName}}</span>
+</h2>
+<h1 id="sub-title" class="text-center">Has Contracted Marriage According <br>to the Rite of the Roman Catholic Church
+</h1>
+<h2 class="spacer">&nbsp;</h2>
 
-    <div id="print-footer">
-        <hr/>
-        <img src="/images/msc.png" alt="" id="msc"/>
-        <p>The Sacred Heart of Jesus Parish, Pajac, Lapu-Lapu City is under the administration of the Missionaries of the Sacred Heart(MSC).
-        It is an international congregation of Priests and Brothers founded in France on December ,1954 by Rev Fr. Jules Chevalier.
-            It aims to make the Most Sacred Heart of Jesus be loved and known everywhere!
-        </p>
+<h2>With <span class="print-values blank-800 recipient-name">{{vm.marriage.parties.bride.firstName}} {{vm.marriage.parties.bride.lastName}}</span>
+    {{vm.age(vm.marriage.parties.bride.birthday)}} yrs old.</h2>
 
-    </div>
+<h2>a native of <span class="print-values blank-600">{{vm.marriage.parties.bride.birthplace}}</span> and a resident of
+</h2>
+<h2><span class="print-values blank-1200">{{vm.marriage.parties.bride.address}}</span></h2>
 
-</div>
+<h2>Child of
+    <span class="print-values blank-childOf">{{vm.marriage.parties.bride.father.firstName}} {{vm.marriage.parties.bride.father.lastName}}
+        &amp;
+    {{vm.marriage.parties.bride.mother.firstName}} {{vm.marriage.parties.bride.mother.lastName}}</span>
+</h2>
+
+
+<h2>On the
+        <span class="print-values blank-150">
+            {{vm.marriage.marriageDate| date:('d')}}
+            <sup>{{vm.marriage.marriageDate | date:('d') | ordinal}}</sup>
+        </span>
+
+    day of
+    <span class="print-values blank-300">{{vm.marriage.marriageDate | date:('MMMM')}}</span>
+    <span class="print-values blank-300" id="marriage-year">{{vm.marriage.marriageDate | date:('y')}}</span>
+</h2>
+<h2>
+    by <span id="marriage-priest" class="print-values blank-950">{{vm.marriage.minister.firstName}} {{vm.marriage.minister.lastName}}</span>
+</h2>
+
+
+<h2>The sponsors being
+    <span class="print-values blank-700" id="marriage-sponsors">{{vm.marriage.sponsors.first.firstName}} {{vm.marriage.sponsors.first.lastName}}
+    &amp;
+    {{vm.marriage.sponsors.second.firstName}} {{vm.marriage.sponsors.second.lastName}}</span>
+</h2>
+<h3>As appears from the Marriage Register
+    Book #<span class="print-values blank-50">{{vm.marriage.bookNumber}}</span>,
+    Page #<span class="print-values blank-50">{{vm.marriage.pageNumber}}</span>
+</h3>
+<h3>
+    Date <span class="print-values blank-150">{{vm.marriage.created | date:('MMMM d, y')}}</span>
+</h3>

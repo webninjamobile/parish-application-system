@@ -193,11 +193,13 @@ a:hover .header-profile-image {
 
 }
 
-#print-body span#recipient-name{
+#print-body span#recipient-name, #print-body span.recipient-name{
   text-transform: uppercase;
 }
 
-#print-body .blank-1200,#print-body .blank-900, #print-body .blank-300, #print-body .blank-150, #print-body .blank-50, #print-body .blank-700{
+#print-body .blank-1200,#print-body .blank-900, #print-body .blank-300, #print-body .blank-150, #print-body .blank-50, #print-body .blank-700,
+#print-body .blank-800,#print-body .blank-600 , #print-body .blank-950, #print-body .blank-childOf
+{
     width: 900px;
     display: inline-block;
     text-align: center;
@@ -209,6 +211,18 @@ a:hover .header-profile-image {
 
 #print-body .blank-1200{
     width: 1020px;
+}
+
+#print-body .blank-950{
+    width: 950px;
+}
+
+#print-body .blank-800{
+    width: 800px;
+}
+
+#print-body .blank-600{
+    width: 600px;
 }
 
 #print-body .blank-300{
@@ -245,4 +259,24 @@ a:hover .header-profile-image {
 
 .spacer{
     height: 20px;
+}
+
+#print-body h2.marginN20{
+  margin-top: -20px;
+}
+
+#print-body .blank-childOf{
+  width: 910px;
+}
+
+#print-body #marriage-year{
+  width: 320px;
+}
+
+#print-body #marriage-priest{
+  width: 980px;
+}
+
+#print-body #marriage-sponsors{
+  width: 758px;
 }
