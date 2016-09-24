@@ -1,50 +1,58 @@
-<div class="form-print" id="print-head">
-    <img src="/images/Jesus.png" alt="" id="shj"/>
-    <h1>Sacred Heart of Jesus Parish</h1>
-    <h2>Pajac, Lapu-Lapu City Tel No: 505-0713</h2>
-    <h3>Parish Canonical Erection: 14 June 1996</h3>
-    <h3>Parish Feastday: May 1 &mdash; St. Joseph, the Workder and Protector</h3>
-    <p>&nbsp;</p>
-    <hr/>
-</div>
-<div id="print">
+<h1 id="main-title" class="text-center">Certificate of Death</h1>
+<h2 class="text-center">This is to certify</h2>
+<h2 class="spacer">&nbsp;</h2>
+<h2 class="spacer">&nbsp;</h2>
 
-<div id="print-body">
-    <h1 id="main-title">Certificate of Death</h1>
-    <h2>This is to acknowledge that</h2>
-    <h2 id="recipient-name" class="print-values">{{vm.death.name.firstName}} {{vm.death.name.lastName}}, {{vm.death.age}}</span> years old </h2>
-    <h2> Survived by <span class="print-values">{{vm.death.relative.firstName}} {{vm.death.relative.lastName}}</span> , <span class="print-values">{{vm.death.relativeType}}</span>.</h2>
-    <h2>&nbsp;</h2>
-    <h2>A resident of <span class="print-values">{{vm.death.address}}</span></h2>
-    <h2>&nbsp;</h2>
-    <h2>Died on <span class="print-values"> {{vm.death.deathday | date:('MMMM d, y')}}</span></h2>
-    <h2>&nbsp;</h2>
-    <h1 id="sub-title">Was Solemnly Buried <br>in the Roman Catholic Cemetary</h1>
-    <h2>&nbsp;</h2>
-    <h2>On <span class="print-values">{{vm.death.burriedday | date:('MMMM d, y')}}</span>
-        by the Rev. Fr.
-        <span class="print-values">{{vm.death.minister.firstName}} {{vm.death.minister.lastName}}</span>
+    <h2>That
+        <span class="print-values blank-800"  id="recipient-name">
+            {{vm.death.name.firstName}} {{vm.death.name.lastName}}
+        </span>
+            , <span class="print-values">{{vm.death.age}} yrs old</span>
+    </h2>
+    <h2> of <span class="print-values blank-800">{{vm.death.relative.firstName}} {{vm.death.relative.lastName}}</span> ,
+        <span class="print-values blank-150" id="relative-type">{{vm.death.relativeType}}</span>
     </h2>
     <h2>&nbsp;</h2>
-    <h3>As appears from the Death Register</h3>
-    <h3>
-        Book #<span class="print-values">{{vm.death.bookNumber}}</span>,
-        Page #<span class="print-values">{{vm.death.pageNumber}}</span>
-    </h3>
-    <h3>&nbsp;</h3>
-    <h3>
-        Date <span class="print-values">{{vm.death.created | date:('MMMM d, y')}}</span>
-    </h3>
-</div>
+    <h2>A resident of <span class="print-values  blank-800" id="death-resident">{{vm.death.address}}</span></h2>
+    <h2>&nbsp;</h2>
+<h2>
+    Died on
+        <span class="print-values blank-150">
+            {{vm.death.deathday | date:('d')}}
+            <sup>{{vm.death.deathday | date:('d') | ordinal}}</sup>
+        </span>
 
-    <div id="print-footer">
-        <hr/>
-        <img src="/images/msc.png" alt="" id="msc"/>
-        <p>The Sacred Heart of Jesus Parish, Pajac, Lapu-Lapu City is under the administration of the Missionaries of the Sacred Heart(MSC).
-        It is an international congregation of Priests and Brothers founded in France on December ,1954 by Rev Fr. Jules Chevalier.
-            It aims to make the Most Sacred Heart of Jesus be loved and known everywhere!
-        </p>
+    day of
+    <span class="print-values blank-300">{{vm.death.deathday | date:('MMMM')}}</span>
+    <span class="print-values blank-300" id="death-year">{{vm.death.deathday | date:('y')}}</span>
+</h2>
 
-    </div>
+    <h2>&nbsp;</h2>
+    <h1 id="sub-title" class="text-center">Was Solemnly Buried <br>in the Roman Catholic Cemetery</h1>
+    <h2>&nbsp;</h2>
+<h2 class="spacer">&nbsp;</h2>
+<h2>On the
+        <span class="print-values blank-150">
+            {{vm.death.burriedday | date:('d')}}
+            <sup>{{vm.death.burriedday | date:('d') | ordinal}}</sup>
+        </span>
 
-</div>
+    day of
+    <span class="print-values blank-300">{{vm.death.burriedday | date:('MMMM')}}</span>
+    <span class="print-values blank-300" id="death-burried-year">{{vm.death.burriedday | date:('y')}}</span>
+</h2>
+<h2>
+    by <span class="print-values blank-950" id="death-priest">{{vm.death.minister.firstName}} {{vm.death.minister.lastName}}</span>
+</h2>
+<h2 class="spacer">&nbsp;</h2>
+<h2 class="spacer">&nbsp;</h2>
+<h3>As appears from the Death Register
+    Book #<span class="print-values blank-150">{{vm.death.bookNumber}}</span>,
+    Page #<span class="print-values blank-150">{{vm.death.pageNumber}}</span>
+</h3>
+<h3>
+    Date <span class="print-values blank-150">{{vm.death.created | date:('MMMM d, y')}}</span>
+</h3>
+
+<h2 class="spacer">&nbsp;</h2>
+<h2 class="spacer">&nbsp;</h2>

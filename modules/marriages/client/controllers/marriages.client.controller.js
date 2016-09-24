@@ -49,9 +49,12 @@
       return d.getMonth() === 1;
     }
 
-    function age(date) {
-      var d = new Date(date);
-      var now = new Date();
+    function age(dateObj,type) {
+
+      var bday = dateObj.parties[type].birthday;
+      var d = new Date(bday);
+      var mDate = dateObj.marriageDate;
+      var now = new Date(mDate);
       var years = now.getFullYear() - d.getFullYear();
       d.setFullYear(d.getFullYear() + years);
       if (d > now) {

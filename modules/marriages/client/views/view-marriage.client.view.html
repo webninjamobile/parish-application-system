@@ -2,31 +2,33 @@
 <h2 class="text-center marginN20">This is to certify</h2>
 <h2 class="spacer"></h2>
 <h2>That <span class="print-values blank-800 recipient-name">{{vm.marriage.parties.groom.firstName}} {{vm.marriage.parties.groom.lastName}}</span>
-    {{vm.age(vm.marriage.parties.groom.birthday)}} yrs old.</h2>
+    , <span class="print-values">{{vm.age(vm.marriage,'groom')}} yrs old</span>
+</h2>
 
-<h2>a native of <span class="print-values blank-600">{{vm.marriage.parties.groom.birthplace}}</span> and a resident of
+<h2>A native of <span class="print-values blank-600">{{vm.marriage.parties.groom.birthplace}}</span> and a resident of
 </h2>
 <h2><span class="print-values blank-1200">{{vm.marriage.parties.groom.address}}</span></h2>
 
 <h2>Child of
     <span class="print-values blank-childOf">{{vm.marriage.parties.groom.father.firstName}} {{vm.marriage.parties.groom.father.lastName}}
-    &amp; {{vm.marriage.parties.groom.mother.firstName}} {{vm.marriage.parties.groom.mother.lastName}}</span>
+    </span>
+    and  <span class="print-values  blank-childOf">{{vm.marriage.parties.groom.mother.firstName}} {{vm.marriage.parties.groom.mother.lastName}}</span>
 </h2>
 <h1 id="sub-title" class="text-center">Has Contracted Marriage According <br>to the Rite of the Roman Catholic Church
 </h1>
 <h2 class="spacer">&nbsp;</h2>
 
 <h2>With <span class="print-values blank-800 recipient-name">{{vm.marriage.parties.bride.firstName}} {{vm.marriage.parties.bride.lastName}}</span>
-    {{vm.age(vm.marriage.parties.bride.birthday)}} yrs old.</h2>
+    , <span class="print-values">{{vm.age(vm.marriage,'bride')}} yrs old</span></h2>
 
-<h2>a native of <span class="print-values blank-600">{{vm.marriage.parties.bride.birthplace}}</span> and a resident of
+<h2>A native of <span class="print-values blank-600">{{vm.marriage.parties.bride.birthplace}}</span> and a resident of
 </h2>
 <h2><span class="print-values blank-1200">{{vm.marriage.parties.bride.address}}</span></h2>
 
 <h2>Child of
-    <span class="print-values blank-childOf">{{vm.marriage.parties.bride.father.firstName}} {{vm.marriage.parties.bride.father.lastName}}
-        &amp;
-    {{vm.marriage.parties.bride.mother.firstName}} {{vm.marriage.parties.bride.mother.lastName}}</span>
+    <span class="print-values blank-childOf">{{vm.marriage.parties.bride.father.firstName}} {{vm.marriage.parties.bride.father.lastName}}</span>
+        and
+    <span class="print-values blank-childOf">{{vm.marriage.parties.bride.mother.firstName}} {{vm.marriage.parties.bride.mother.lastName}}</span>
 </h2>
 
 
@@ -46,9 +48,9 @@
 
 
 <h2>The sponsors being
-    <span class="print-values blank-700" id="marriage-sponsors">{{vm.marriage.sponsors.first.firstName}} {{vm.marriage.sponsors.first.lastName}}
-    &amp;
-    {{vm.marriage.sponsors.second.firstName}} {{vm.marriage.sponsors.second.lastName}}</span>
+    <span class="print-values blank-340">{{vm.marriage.sponsors.first.firstName}} {{vm.marriage.sponsors.first.lastName}}</span>
+    and
+    <span class="print-values blank-340">{{vm.marriage.sponsors.second.firstName}} {{vm.marriage.sponsors.second.lastName}}</span>
 </h2>
 <h3>As appears from the Marriage Register
     Book #<span class="print-values blank-50">{{vm.marriage.bookNumber}}</span>,

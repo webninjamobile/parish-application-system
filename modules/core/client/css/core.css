@@ -198,7 +198,8 @@ a:hover .header-profile-image {
 }
 
 #print-body .blank-1200,#print-body .blank-900, #print-body .blank-300, #print-body .blank-150, #print-body .blank-50, #print-body .blank-700,
-#print-body .blank-800,#print-body .blank-600 , #print-body .blank-950, #print-body .blank-childOf
+#print-body .blank-800,#print-body .blank-600 , #print-body .blank-950, #print-body .blank-childOf,
+#print-body .blank-340
 {
     width: 900px;
     display: inline-block;
@@ -227,6 +228,10 @@ a:hover .header-profile-image {
 
 #print-body .blank-300{
     width: 300px;
+}
+
+#print-body .blank-340{
+    width: 345px;
 }
 
 #print-body .blank-150{
@@ -266,7 +271,7 @@ a:hover .header-profile-image {
 }
 
 #print-body .blank-childOf{
-  width: 910px;
+  width: 425px;
 }
 
 #print-body #marriage-year{
@@ -280,3 +285,24 @@ a:hover .header-profile-image {
 #print-body #marriage-sponsors{
   width: 758px;
 }
+
+#print-body #death-resident{
+    width: 850px;
+}
+
+#print-body #relative-type{
+    width: 170px;
+}
+
+#print-body #death-year{
+    width: 315px;
+}
+
+#print-body #death-burried-year{
+    width: 330px;
+}
+
+#print-body #death-priest{
+    width: 990px;
+}
+
