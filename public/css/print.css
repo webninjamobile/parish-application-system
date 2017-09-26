@@ -1,18 +1,18 @@
 body{
-    zoom: 47%;
+    zoom: 65%;
 }
 
 #page-border{
     width: 100%;
     position: absolute;
     z-index: -1;
-    padding-top: 20px;
+    height:1650px;
 }
 
 #print-wrapper{
     padding: 50px;
     padding-top: 80px;
-    padding-left: 115px;
+    padding-left: 85px;
 }
 
 #shj{
@@ -20,9 +20,6 @@ body{
     margin-top: 30px;
 }
 
-#print-body{
-    height: 1250px;
-}
 
 #print-body .print-values {
     border-bottom: solid #777 1px;
@@ -40,4 +37,10 @@ div{
 #print-footer{
     padding-left: 100px;
     padding-right: 200px;
+   position: absolute;
+   bottom: 30px;
+}
+
+#print-footer p{
+    padding-top: 15px;
 }

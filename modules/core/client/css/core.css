@@ -109,6 +109,7 @@ a:hover .header-profile-image {
 
 #print-head{
   font-family: 'Droid Serif';
+  margin-top:-20px;
 }
 
 #print-head h1{

@@ -57,8 +57,9 @@ exports.renderPrint = function (req, res) {
   var id = req.params.id;
   var filename = id + '.pdf';
   var url = 'http://localhost:3000/' + type + '/' + id + '/preview';
-  var cmd = '/usr/local/bin/phantomjs print.js ' + id + ' ' + url;
-  exec(cmd, function () {
+  var cmd = 'C:/phantomjs.exe print.js ' + id + ' ' + url;
+  exec(cmd, function (err) {
+    console.log(err);
     res.redirect('/pdf/' + filename);
   });
 
